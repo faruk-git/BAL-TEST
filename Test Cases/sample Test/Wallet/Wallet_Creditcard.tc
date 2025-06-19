@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Wallet_Creditcard</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>432b880b-11db-4c22-aff5-139f3eb33864</testCaseGuid>
+</TestCaseEntity>
