@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Verify</name>
+   <tag></tag>
+   <elementGuidId>17404922-06f5-4f28-a23a-4a7ba7baf7db</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@content_desc = 'Verify' and @index = '7']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>content_desc</name>
+      <type>Main</type>
+      <value>Verify</value>
+      <webElementGuid>7c029eea-d716-4114-9bee-4e54c55c6b0c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>index</name>
+      <type>Main</type>
+      <value>7</value>
+      <webElementGuid>53ba32a6-2ead-4a79-9cc5-717d6f8fafb5</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>
