@@ -61,17 +61,17 @@ Mobile.pressBack()
 
 Mobile.tap(obj_3, 10)
 
-if (Mobile.verifyElementVisible(obj_4, 10)) {
-    println('✅ Address Confirmation button found, tapping it...')
-
-    Mobile.tap(obj_4, 10)
-
-    
-} else {
-            println('Address Confirmation not found, tapping fallback...')
+//if (Mobile.verifyElementVisible(obj_4, 10) == false) {
+//    println('✅ Address Confirmation button found, tapping it...')
+//
+//    Mobile.tap(obj_4, 10)
+//
+//    
+//} else {
+//            println('Address Confirmation not found, tapping fallback...')
 
             Mobile.tap(obj_5, 10)
-}
+//}
 
 void startProducts(int firstIndex, int totalProducts) {
     int tapCount = 17
