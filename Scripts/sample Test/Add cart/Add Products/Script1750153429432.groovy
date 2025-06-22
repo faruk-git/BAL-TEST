@@ -23,15 +23,22 @@ Mobile.startApplication('C:\\Users\\Farook\\Downloads\\app-release (7).apk', fal
 Mobile.pressBack()
 
 TestObject obj_1 = new TestObject()
-obj_1.addProperty('xpath', ConditionType.EQUALS, "//*[contains(@content-desc, 'Search')]")
+
+obj_1.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Search\')]')
 
 TestObject obj_2 = findTestObject('Object Repository/Add products/Element Present')
 
 TestObject obj_3 = new TestObject()
-obj_3.addProperty('xpath', ConditionType.EQUALS, "//*[contains(@content-desc, 'cart')]")
+
+obj_3.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'cart\')]')
 
 TestObject obj_4 = new TestObject()
-obj_4.addProperty('xpath', ConditionType.EQUALS,  "//*[contains(@content-desc, 'Login')]")
+
+obj_4.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Yes\')]')
+
+TestObject obj_5 = new TestObject()
+
+obj_5.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Login\')]')
 
 Mobile.tap(obj_1, 10)
 
@@ -40,22 +47,31 @@ Mobile.waitForElementPresent(findTestObject('Object Repository/Add products/Elem
 
 // Main function
 // Create dynamic object
-		Mobile.delay(0.1)
+Mobile.delay(0.1)
+
 // Scroll after every 5 taps
 // Call it
 startProducts(2, 17)
 
 startProducts(2, 17)
 
-startProducts(2, 17)
-
+//startProducts(2, 17)
 //startProducts(2, 27)
-
 Mobile.pressBack()
 
 Mobile.tap(obj_3, 10)
 
-Mobile.tap(obj_4, 10)
+if (Mobile.verifyElementVisible(obj_4, 10)) {
+    println('✅ Address Confirmation button found, tapping it...')
+
+    Mobile.tap(obj_4, 10)
+
+    
+} else {
+            println('Address Confirmation not found, tapping fallback...')
+
+            Mobile.tap(obj_5, 10)
+}
 
 void startProducts(int firstIndex, int totalProducts) {
     int tapCount = 17

@@ -18,53 +18,34 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startApplication('C:\\Users\\Farook\\Downloads\\app-release (7).apk', true)
-
-TestObject obj_1 = new TestObject()
-
-obj_1.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'English\')]')
-
-TestObject obj_2 = new TestObject()
-
-obj_2.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Continue\')]')
-
-TestObject obj_3 = new TestObject()
-
-obj_3.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Next\')]')
-
-TestObject obj_4 = new TestObject()
-
-obj_4.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Get\')]')
-
-TestObject obj_5 = new TestObject()
-
-obj_5.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Grant\')]')
-
-TestObject obj_6 = new TestObject()
-
-obj_6.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'yes\')]')
+Mobile.startApplication('C:\\Users\\Farook\\Downloads\\app-release (7).apk', false)
 
 Mobile.pressBack()
 
-Mobile.tap(obj_1, 10)
+TestObject obj_1 = new TestObject()
 
-Mobile.tap(obj_2, 10)
+obj_1.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Ice Cream\')]')
 
-Mobile.tap(obj_3, 10)
+if (Mobile.verifyElementVisible(obj_1,1)) {
+	boolean found = false
+int maxScrolls = 5
 
-Mobile.tap(obj_4, 10)
+for (int i = 0; i < maxScrolls; i++) {
+    if (Mobile.verifyElementVisible(obj_1, 1)) {
+        Mobile.tap(obj_1, 10)
+		found = true
+		break
+        println('Element Exist')
+    } else {
+        println('Element Does not Exist')
 
-if (Mobile.verifyElementExist(obj_5, 10)) {
-    println('✅ Main button found, tapping it...')
+        int startX = Mobile.getDeviceWidth() / 2
 
-    Mobile.tap(obj_5, 10)
-} else {
-    Mobile.verifyElementNotExist(obj_5, 10).call({ 
-            println('Main button not found, tapping fallback...')
+        int startY = (Mobile.getDeviceHeight() * 3) / 4
 
-            Mobile.pressBack()
+        int endY = Mobile.getDeviceHeight() / 4
 
-            Mobile.tap(obj_6, 10)
-        })
+        Mobile.swipe(startX, startY, startX, endY)
+    }
 }
-
+}

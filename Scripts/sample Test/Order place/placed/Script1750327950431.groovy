@@ -18,33 +18,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startApplication('C:\\Users\\Farook\\Downloads\\app-release (7).apk', true)
+//Mobile.startApplication('C:\\Users\\Farook\\Downloads\\app-release (7).apk', false)
 
 TestObject obj_1 = new TestObject()
-
-obj_1.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'English\')]')
+obj_1.addProperty('xpath', ConditionType.EQUALS, "//*[contains(@content-desc, 'cart')]")
 
 TestObject obj_2 = new TestObject()
-
-obj_2.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Continue\')]')
+obj_2.addProperty('xpath', ConditionType.EQUALS, "//*[contains(@content-desc, 'Checkout')]")
 
 TestObject obj_3 = new TestObject()
-
-obj_3.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Next\')]')
+obj_3.addProperty('xpath', ConditionType.EQUALS, "//*[contains(@content-desc, 'Cash')]")
 
 TestObject obj_4 = new TestObject()
-
-obj_4.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Get\')]')
-
-TestObject obj_5 = new TestObject()
-
-obj_5.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'Grant\')]')
-
-TestObject obj_6 = new TestObject()
-
-obj_6.addProperty('xpath', ConditionType.EQUALS, '//*[contains(@content-desc, \'yes\')]')
-
-Mobile.pressBack()
+obj_4.addProperty('xpath', ConditionType.EQUALS, "//*[contains(@content-desc, 'Place')]")
 
 Mobile.tap(obj_1, 10)
 
@@ -54,17 +40,4 @@ Mobile.tap(obj_3, 10)
 
 Mobile.tap(obj_4, 10)
 
-if (Mobile.verifyElementExist(obj_5, 10)) {
-    println('✅ Main button found, tapping it...')
-
-    Mobile.tap(obj_5, 10)
-} else {
-    Mobile.verifyElementNotExist(obj_5, 10).call({ 
-            println('Main button not found, tapping fallback...')
-
-            Mobile.pressBack()
-
-            Mobile.tap(obj_6, 10)
-        })
-}
 
